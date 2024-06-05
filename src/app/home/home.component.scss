@@ -1,3 +1,7 @@
+:host {
+  display: inline-grid;
+}
+
 div[footer] {
   display: grid;
   grid-template-columns: 1fr 1fr;

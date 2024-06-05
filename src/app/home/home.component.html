@@ -8,3 +8,11 @@
     <button mat-raised-button color="warn" (click)="decrement()">Decrement</button>
   </div>
 </my-card>
+<my-card>
+  <h1 header>My Pokemon</h1>
+  <div body>
+    @if (pokemonList) {
+      <pre>Counter: {{ pokemonList | json }}</pre>
+    }
+  </div>
+</my-card>

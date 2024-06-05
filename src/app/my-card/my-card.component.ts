@@ -1,4 +1,4 @@
-import { Component, Directive } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Directive } from '@angular/core';
 
 @Directive({ standalone: true, selector: '[header]' })
 export class MyCardHeaderDirective {}
@@ -41,5 +41,6 @@ export class MyCardFooterDirective {}
       </ng-content>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MyCardComponent {}
