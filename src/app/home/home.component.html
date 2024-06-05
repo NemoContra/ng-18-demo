@@ -1,3 +1,10 @@
 <my-card>
   <h1 header>Welcome</h1>
+  <div body>
+    <p>Counter: {{ counter }}</p>
+  </div>
+  <div footer>
+    <button mat-raised-button color="primary" (click)="increment()">Increment</button>
+    <button mat-raised-button color="warn" (click)="decrement()">Decrement</button>
+  </div>
 </my-card>
