@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './m3-theme';
+
+html {
+  @include mat.core-theme(m3-theme.$light-theme);
+  @include mat.all-component-themes(m3-theme.$light-theme);
+}
+
+:host,
+:root {
+  @include mat.core();
+}
+
+html,
+body {
+  height: 100%;
+  background-color: mat.get-theme-color(m3-theme.$light-theme, primary, 98);
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.toolbar-primary > mat-toolbar {
+  background-color: mat.get-theme-color(m3-theme.$light-theme, primary, 80);
+}

@@ -1,0 +1,14 @@
+<my-card>
+  <div header>
+    <h1>My custom Login</h1>
+  </div>
+  <form body [formGroup]="loginGroup" (submit)="onLogin()">
+    <mat-form-field>
+      <input matInput formControlName="username" placeholder="Username" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="password" placeholder="Password" type="password" />
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Login</button>
+  </form>
+</my-card>

@@ -1,0 +1,7 @@
+# Add files here to ignore them from prettier formatting
+*.min.*
+/dist
+/coverage
+/target
+/.angular/cache
+.angular
