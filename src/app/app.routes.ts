@@ -11,9 +11,15 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('./login/login.component'),
+    canMatch: [() => !inject(AuthService).isLoggedIn()],
   },
   {
     path: 'home',
     loadComponent: () => import('./home/home.component'),
+    canMatch: [() => inject(AuthService).isLoggedIn()],
+  },
+  {
+    path: '**',
+    redirectTo: '/',
   },
 ];
