@@ -11,8 +11,14 @@
 <my-card>
   <h1 header>My Pokemon</h1>
   <div body>
-    @if (pokemonList) {
-      <pre>Pokemon: {{ pokemonList | json }}</pre>
+    @if (pokemonList$ | async; as pokemonList) {
+      <pre>Counter: {{ pokemonList | json }}</pre>
     }
+  </div>
+</my-card>
+<my-card>
+  <h1 header>My Timer</h1>
+  <div body>
+    <pre>Timer: {{ timer() }}</pre>
   </div>
 </my-card>

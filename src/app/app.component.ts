@@ -25,7 +25,7 @@ import { AuthService } from './auth/auth.service';
     </nav>
     <router-outlet></router-outlet>
   `,
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   private authService = inject(AuthService);

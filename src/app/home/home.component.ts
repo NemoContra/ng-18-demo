@@ -8,7 +8,8 @@ import {
 import { MatButton } from '@angular/material/button';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { map, timer } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'home',
@@ -24,19 +25,15 @@ import { map } from 'rxjs';
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HomeComponent {
   counter = 0;
-  pokemonList: string[] | null = null;
+  pokemonList$ = inject(HttpClient)
+    .get<{ results: { name: string }[] }>('https://pokeapi.co/api/v2/pokemon?limit=10')
+    .pipe(map((data) => data.results.map(({ name }) => name)));
 
-  constructor() {
-    inject(HttpClient)
-      .get<{ results: { name: string }[] }>('https://pokeapi.co/api/v2/pokemon?limit=10')
-      .subscribe((data) => {
-        this.pokemonList = data.results.map(({ name }) => name);
-      });
-  }
+  timer = toSignal(timer(0, 1000), { initialValue: 0 });
 
   increment() {
     this.counter++;
