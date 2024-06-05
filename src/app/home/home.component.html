@@ -12,7 +12,7 @@
   <h1 header>My Pokemon</h1>
   <div body>
     @if (pokemonList$ | async; as pokemonList) {
-      <pre>Counter: {{ pokemonList | json }}</pre>
+      <pre>Pokemon: {{ pokemonList | json }}</pre>
     }
   </div>
 </my-card>
