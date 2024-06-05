@@ -33,6 +33,8 @@ export function app(): express.Express {
   server.get('**', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
+    console.log(JSON.stringify({ protocol, originalUrl, baseUrl, headers }));
+
     commonEngine
       .render({
         bootstrap,
