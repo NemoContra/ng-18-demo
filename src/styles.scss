@@ -6,10 +6,7 @@ html {
   @include mat.all-component-themes(m3-theme.$light-theme);
 }
 
-:host,
-:root {
-  @include mat.core();
-}
+@include mat.core();
 
 html,
 body {
