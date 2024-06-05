@@ -42,4 +42,8 @@ export default class HomeComponent {
   decrement() {
     if (this.counter > 0) this.counter--;
   }
+
+  reset() {
+    this.counter = 0;
+  }
 }

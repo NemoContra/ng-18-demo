@@ -4,8 +4,9 @@
     <p>Counter: {{ counter }}</p>
   </div>
   <div footer>
-    <button mat-raised-button color="primary" (click)="increment()">Increment</button>
-    <button mat-raised-button color="warn" (click)="decrement()">Decrement</button>
+    <button mat-raised-button (click)="increment()">Increment</button>
+    <button mat-raised-button (click)="decrement()">Decrement</button>
+    <button mat-raised-button (click)="reset()">Reset</button>
   </div>
 </my-card>
 <my-card>
