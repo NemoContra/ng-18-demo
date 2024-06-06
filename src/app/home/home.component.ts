@@ -8,6 +8,7 @@ import {
 import { MatButton } from '@angular/material/button';
 import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'home',
@@ -31,6 +32,7 @@ export default class HomeComponent {
   constructor() {
     inject(HttpClient)
       .get<{ results: { name: string }[] }>('https://pokeapi.co/api/v2/pokemon?limit=10')
+      .pipe(takeUntilDestroyed())
       .subscribe((data) => {
         this.pokemonList = data.results.map(({ name }) => name);
       });
