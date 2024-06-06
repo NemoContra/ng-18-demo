@@ -6,9 +6,8 @@ import {
   MyCardHeaderDirective,
 } from '../my-card/my-card.component';
 import { MatButton } from '@angular/material/button';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'home',
@@ -20,7 +19,6 @@ import { map } from 'rxjs';
     MatButton,
     MyCardFooterDirective,
     JsonPipe,
-    AsyncPipe,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
